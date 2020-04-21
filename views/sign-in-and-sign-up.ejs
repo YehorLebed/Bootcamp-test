@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/styles.css">
+  <title>Welcome</title>
+</head>
+
+<body>
+  <div class="content">
+    <div class="form-container">
+      <h2 class="title">Registration:</h2>
+      <form class="form" action="/registration" method="POST">
+
+        <div class="input-field">
+          <label for="reg-email">Email:</label>
+          <input id="reg-email" type="email" name="email" required />
+        </div>
+
+        <div class="input-field">
+          <label for="reg-realName">Name:</label>
+          <input id="reg-realName" type="text" name="realName" required />
+        </div>
+
+        <div class="input-field">
+          <label for="reg-birthDate">Birth Date:</label>
+          <input type="date" name="birthDate" required />
+        </div>
+
+        <div class="input-field">
+          <label for="reg-password">Password:</label>
+          <input id="reg-password" type="password" name="password" required />
+        </div>
+
+        <div class="input-field">
+          <input class="btn" type="submit" value="Registration" />
+        </div>
+
+      </form>
+    </div>
+
+    <div class="form-container">
+      <h2 class="title">Login:</h2>
+      <form class="form" action="/login" method="POST">
+
+        <div class="input-field">
+          <label for="log-email">Email:</label>
+          <input id="log-email" type="email" name="email" required />
+        </div>
+
+        <div class="input-field">
+          <label for="log-password">Password:</label>
+          <input id="log-password" type="password" name="password" required />
+        </div>
+
+        <div class="input-field">
+          <input class="btn" type="submit" value="Login" />
+        </div>
+      </form>
+    </div>
+    <% if (locals.error) { %>
+      <% if( Array.isArray(error)) { %>
+        <div class="error-message">
+          <% for(let errorMsg of error) { %>
+            <p><%= errorMsg.msg %></p>
+          <% } %>
+        </div>
+      <% } else { %>
+        <div class="error-message">
+          <%= error %>
+        </div>
+      <% } %>
+    <% } %>
+  </div>
+
+</body>
+
+</html>

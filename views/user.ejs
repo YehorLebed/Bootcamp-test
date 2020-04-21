@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/styles.css">
+  <title>Welcome</title>
+</head>
+
+<body>
+  <div class="content">
+    <div class="user-info-container">
+      <h2 class="title">Welcome!</h2>
+      <div class="user-info">
+        Email: <span><%= email %></span>
+      </div>
+      <div class="user-info">
+        Name: <span><%= realName%></span>
+      </div>
+    </div>
+    <div class="form">
+      <form action="/logout" method="POST">
+        <div class="input-field">
+          <input class="btn" type="submit" value="Logout">
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+
+</html>
